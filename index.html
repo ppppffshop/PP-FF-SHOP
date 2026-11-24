@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#101114" />
-  <meta name="description" content="PP-FF-SHOP — a simple storefront concept for Free Fire top-ups and memberships." />
-  <title>PP-FF-SHOP — Top up. Drop in.</title>
+  <meta name="description" content="PP-FF-SHOP — une boutique simple de recharges et d'abonnements Free Fire." />
+  <title>PP-FF-SHOP — Rechargez. Entrez dans le jeu.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
@@ -13,50 +13,50 @@
   <script src="app.js" defer></script>
 </head>
 <body>
-  <div class="announcement"><span class="announcement-dot"></span> The drop starts here <span class="announcement-sep">✦</span> Top-up storefront concept</div>
+  <div class="announcement"><span class="announcement-dot"></span> Commencez votre prochaine partie <span class="announcement-sep">✦</span> Boutique de recharges</div>
   <header class="site-header">
-    <a class="brand" href="#home" aria-label="PP-FF-SHOP home"><span class="brand-mark">PP</span><span class="brand-name">PP-FF<span>SHOP</span></span></a>
-    <nav class="main-nav" aria-label="Main navigation"><a class="active" href="#shop">Top-ups</a><a href="#how-it-works">How it works</a><a href="#faq">FAQ</a></nav>
-    <button class="cart-trigger" id="cart-trigger" aria-label="Open shopping cart"><span class="cart-icon">▱</span><span class="cart-label">Cart</span><span class="cart-count" id="cart-count">0</span></button>
+    <a class="brand" href="#home" aria-label="Accueil PP-FF-SHOP"><span class="brand-mark">PP</span><span class="brand-name">PP-FF<span>SHOP</span></span></a>
+    <nav class="main-nav" aria-label="Navigation principale"><a class="active" href="#shop">Recharges</a><a href="#how-it-works">Comment ça marche</a><a href="#faq">FAQ</a></nav>
+    <button class="cart-trigger" id="cart-trigger" aria-label="Ouvrir le panier"><span class="cart-icon">▱</span><span class="cart-label">Panier</span><span class="cart-count" id="cart-count">0</span></button>
   </header>
 
   <main id="home">
     <section class="hero">
       <div class="hero-grain"></div>
       <div class="hero-copy">
-        <p class="eyebrow"><span class="eyebrow-line"></span> YOUR NEXT DROP IS WAITING</p>
-        <h1>Top up.<br /><span>Drop in.</span></h1>
-        <p class="hero-description">Get back in the game with a quick, no-fuss top-up. Pick your pack, enter your player ID, and you’re set.</p>
-        <a class="button button-primary" href="#shop">Explore top-ups <span aria-hidden="true">↗</span></a>
-        <div class="hero-trust"><span class="trust-icon">✳</span><span>Simple checkout</span><span class="trust-divider"></span><span>Player ID delivery</span></div>
+        <p class="eyebrow"><span class="eyebrow-line"></span> VOTRE PROCHAINE PARTIE VOUS ATTEND</p>
+        <h1>Rechargez.<br /><span>Entrez en jeu.</span></h1>
+        <p class="hero-description">Retrouvez rapidement la partie avec une recharge simple. Choisissez votre offre, saisissez votre identifiant joueur et c'est prêt.</p>
+        <a class="button button-primary" href="#shop">Voir les recharges <span aria-hidden="true">↗</span></a>
+        <div class="hero-trust"><span class="trust-icon">✳</span><span>Paiement simple</span><span class="trust-divider"></span><span>Livraison sur ID joueur</span></div>
       </div>
-      <div class="hero-art" aria-label="Abstract orange gaming artwork" role="img">
+      <div class="hero-art" aria-label="Illustration orange abstraite sur le thème du jeu" role="img">
         <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="art-glow"></div>
-        <div class="art-card"><span class="art-card-kicker">LEVEL UP</span><span class="art-diamond">◆</span><span class="art-card-text">YOUR<br />NEXT<br /><b>MOVE.</b></span><span class="art-card-foot">PP-FF / 001</span></div>
-        <span class="art-spark spark-one">✦</span><span class="art-spark spark-two">✧</span><span class="art-caption">PLAY ON YOUR TERMS</span>
+        <div class="art-card"><span class="art-card-kicker">MONTEZ DE NIVEAU</span><span class="art-diamond">◆</span><span class="art-card-text">VOTRE<br />PROCHAIN<br /><b>MOUVEMENT.</b></span><span class="art-card-foot">PP-FF / 001</span></div>
+        <span class="art-spark spark-one">✦</span><span class="art-spark spark-two">✧</span><span class="art-caption">JOUEZ À VOTRE FAÇON</span>
       </div>
       <div class="hero-index"><span>01</span><i></i><span>03</span></div>
     </section>
 
     <section class="shop-section section-wrap" id="shop">
-      <div class="section-heading"><div><p class="eyebrow"><span class="eyebrow-line"></span> THE SHOP</p><h2>Choose your <span>drop.</span></h2></div><p class="section-note">Find the pack that fits your next session.</p></div>
-      <div class="shop-controls"><div class="tabs" role="tablist" aria-label="Product type"><button class="tab active" role="tab" aria-selected="true" data-category="diamonds">Diamond packs</button><button class="tab" role="tab" aria-selected="false" data-category="membership">Memberships</button></div><label class="region-select">Region <select id="region-select" aria-label="Select region"><option value="IN">India (IN)</option><option value="GLOBAL">Global</option></select></label></div>
+      <div class="section-heading"><div><p class="eyebrow"><span class="eyebrow-line"></span> LA BOUTIQUE</p><h2>Choisissez votre <span>offre.</span></h2></div><p class="section-note">Trouver le paquet adapté à votre prochaine session.</p></div>
+      <div class="shop-controls"><div class="tabs" role="tablist" aria-label="Type de produit"><button class="tab active" role="tab" aria-selected="true" data-category="diamonds">Paquets de diamants</button><button class="tab" role="tab" aria-selected="false" data-category="membership">Abonnements</button></div><label class="region-select">Devise <select id="region-select" aria-label="Choisir la devise"><option value="HTG">Haïti (HTG)</option></select></label></div>
       <div class="product-grid" id="product-grid" aria-live="polite"></div>
-      <p class="shop-disclaimer">Prices shown are sample storefront content. Availability and regional pricing need to be configured before launch.</p>
+      <p class="shop-disclaimer">Les prix présentés sont des exemples. Configurez le stock et les tarifs définitifs avant le lancement.</p>
     </section>
 
-    <section class="steps-section" id="how-it-works"><div class="section-wrap"><div class="section-heading"><div><p class="eyebrow"><span class="eyebrow-line"></span> EASY DOES IT</p><h2>Three steps.<br /><span>Back in game.</span></h2></div><p class="section-note">A simple flow, from pack to play.</p></div><div class="steps-grid"><article class="step-card"><span class="step-number">01</span><span class="step-icon">◈</span><h3>Pick your pack</h3><p>Choose a top-up or membership from the shop.</p></article><article class="step-card"><span class="step-number">02</span><span class="step-icon">⌁</span><h3>Add player details</h3><p>Enter your player ID carefully at checkout.</p></article><article class="step-card"><span class="step-number">03</span><span class="step-icon">↗</span><h3>Confirm your order</h3><p>Review your details and follow the seller’s payment instructions.</p></article></div></div></section>
+    <section class="steps-section" id="how-it-works"><div class="section-wrap"><div class="section-heading"><div><p class="eyebrow"><span class="eyebrow-line"></span> SIMPLEMENT</p><h2>Trois étapes.<br /><span>De retour en jeu.</span></h2></div><p class="section-note">Un parcours simple, de l'offre à la partie.</p></div><div class="steps-grid"><article class="step-card"><span class="step-number">01</span><span class="step-icon">◈</span><h3>Choisissez votre offre</h3><p>Sélectionnez une recharge ou un abonnement dans la boutique.</p></article><article class="step-card"><span class="step-number">02</span><span class="step-icon">⌁</span><h3>Ajoutez vos informations</h3><p>Saisissez soigneusement votre identifiant joueur au paiement.</p></article><article class="step-card"><span class="step-number">03</span><span class="step-icon">↗</span><h3>Confirmez votre commande</h3><p>Vérifiez vos informations et suivez les instructions du vendeur.</p></article></div></div></section>
 
-    <section class="faq-section section-wrap" id="faq"><div class="section-heading"><div><p class="eyebrow"><span class="eyebrow-line"></span> GOOD TO KNOW</p><h2>Quick <span>answers.</span></h2></div></div><div class="faq-list"><details><summary>What information do I need to place an order?<span>+</span></summary><p>You’ll need your in-game player ID. Always double-check it before confirming. This demo storefront does not submit or fulfill real orders.</p></details><details><summary>How do I pay for an order?<span>+</span></summary><p>Payment methods and fulfillment have not been connected yet. Configure a trusted payment provider and order backend before accepting real payments.</p></details><details><summary>Is PP-FF-SHOP affiliated with Garena?<span>+</span></summary><p>PP-FF-SHOP is an independent storefront concept and is not affiliated with or endorsed by Garena or the makers of Free Fire.</p></details></div></section>
+    <section class="faq-section section-wrap" id="faq"><div class="section-heading"><div><p class="eyebrow"><span class="eyebrow-line"></span> BON À SAVOIR</p><h2>Réponses <span>rapides.</span></h2></div></div><div class="faq-list"><details><summary>Quelles informations faut-il pour commander ?<span>+</span></summary><p>Vous aurez besoin de votre identifiant joueur. Vérifiez-le attentivement avant de confirmer. Cette boutique de démonstration n'envoie aucune commande réelle.</p></details><details><summary>Comment payer une commande ?<span>+</span></summary><p>Les moyens de paiement et la livraison ne sont pas encore configurés. Connectez un prestataire de paiement sécurisé et un système de commande avant d'accepter de vrais paiements.</p></details><details><summary>PP-FF-SHOP est-il affilié à Garena ?<span>+</span></summary><p>PP-FF-SHOP est un concept de boutique indépendant, sans affiliation ni approbation de Garena ou des créateurs de Free Fire.</p></details></div></section>
 
-    <section class="final-cta"><div><p class="eyebrow">READY WHEN YOU ARE</p><h2>Your next session<br />starts <span>here.</span></h2></div><a class="button button-light" href="#shop">Browse the shop <span aria-hidden="true">↗</span></a><span class="cta-symbol">✳</span></section>
+    <section class="final-cta"><div><p class="eyebrow">PRÊT QUAND VOUS LE SEREZ</p><h2>Votre prochaine partie<br />commence <span>ici.</span></h2></div><a class="button button-light" href="#shop">Voir la boutique <span aria-hidden="true">↗</span></a><span class="cta-symbol">✳</span></section>
   </main>
 
-  <footer class="site-footer"><a class="brand" href="#home"><span class="brand-mark">PP</span><span class="brand-name">PP-FF<span>SHOP</span></span></a><p>Independent storefront concept. Not affiliated with Garena or Free Fire.</p><span class="copyright">© <span id="year"></span> PP-FF-SHOP</span></footer>
+  <footer class="site-footer"><a class="brand" href="#home"><span class="brand-mark">PP</span><span class="brand-name">PP-FF<span>SHOP</span></span></a><p>Concept de boutique indépendant. Non affilié à Garena ou Free Fire.</p><span class="copyright">© <span id="year"></span> PP-FF-SHOP</span></footer>
 
   <div class="drawer-backdrop" id="drawer-backdrop" hidden></div>
-  <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping cart" aria-hidden="true"><div class="drawer-header"><div><p class="eyebrow">YOUR SELECTION</p><h2>Your cart <span id="drawer-item-count">(0)</span></h2></div><button class="icon-button" id="close-cart" aria-label="Close cart">×</button></div><div class="cart-items" id="cart-items"></div><div class="cart-empty" id="cart-empty"><span>◈</span><h3>Your cart is waiting.</h3><p>Pick a pack and make it yours.</p><button class="text-button" id="continue-shopping">Continue shopping ↗</button></div><div class="cart-summary" id="cart-summary" hidden><div class="subtotal-row"><span>Subtotal</span><strong id="cart-subtotal">₹0</strong></div><p>Shipping and payment are not configured in this demo.</p><button class="button button-primary checkout-button" id="checkout-button">Continue to checkout <span>↗</span></button></div></aside>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Panier" aria-hidden="true"><div class="drawer-header"><div><p class="eyebrow">VOTRE SÉLECTION</p><h2>Votre panier <span id="drawer-item-count">(0)</span></h2></div><button class="icon-button" id="close-cart" aria-label="Fermer le panier">×</button></div><div class="cart-items" id="cart-items"></div><div class="cart-empty" id="cart-empty"><span>◈</span><h3>Votre panier est vide.</h3><p>Choisissez une offre pour commencer.</p><button class="text-button" id="continue-shopping">Continuer les achats ↗</button></div><div class="cart-summary" id="cart-summary" hidden><div class="subtotal-row"><span>Sous-total</span><strong id="cart-subtotal">0 HTG</strong></div><p>La livraison et le paiement ne sont pas configurés dans cette démonstration.</p><button class="button button-primary checkout-button" id="checkout-button">Continuer vers le paiement <span>↗</span></button></div></aside>
 
-  <dialog class="checkout-dialog" id="checkout-dialog"><form method="dialog" id="checkout-form"><button class="icon-button dialog-close" aria-label="Close checkout">×</button><p class="eyebrow"><span class="eyebrow-line"></span> ALMOST THERE</p><h2>Order <span>details.</span></h2><p class="dialog-intro">Enter your player ID. This is a demo only; no order or payment will be submitted.</p><label for="player-id">Player ID</label><input id="player-id" name="playerId" inputmode="numeric" autocomplete="off" placeholder="e.g. 123456789" required minlength="5" maxlength="20" /><label for="player-email">Email for order updates</label><input id="player-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required /><div class="order-preview" id="order-preview"></div><button class="button button-primary dialog-submit" value="submit">Review demo order <span>↗</span></button><p class="form-message" id="form-message" aria-live="polite"></p></form></dialog>
+  <dialog class="checkout-dialog" id="checkout-dialog"><form method="dialog" id="checkout-form"><button class="icon-button dialog-close" aria-label="Fermer le paiement">×</button><p class="eyebrow"><span class="eyebrow-line"></span> PRESQUE TERMINÉ</p><h2>Informations <span>de commande.</span></h2><p class="dialog-intro">Saisissez votre identifiant joueur. Ceci est une démonstration ; aucune commande ni aucun paiement ne sera envoyé.</p><label for="player-id">Identifiant joueur</label><input id="player-id" name="playerId" inputmode="numeric" autocomplete="off" placeholder="ex. 123456789" required minlength="5" maxlength="20" /><label for="player-email">Courriel pour les mises à jour</label><input id="player-email" name="email" type="email" autocomplete="email" placeholder="vous@exemple.com" required /><div class="order-preview" id="order-preview"></div><button class="button button-primary dialog-submit" value="submit">Voir la commande de démonstration <span>↗</span></button><p class="form-message" id="form-message" aria-live="polite"></p></form></dialog>
 </body>
 </html>

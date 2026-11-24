@@ -1,38 +1,37 @@
 const PRODUCTS = {
   diamonds: [
-    { id: 'd100', name: '100 Diamonds', detail: 'A little something extra', price: 80, tag: '' },
-    { id: 'd310', name: '310 Diamonds', detail: 'For your next big play', price: 240, tag: 'POPULAR' },
-    { id: 'd520', name: '520 Diamonds', detail: 'More room to play', price: 400, tag: '' },
-    { id: 'd1060', name: '1,060 Diamonds', detail: 'Go all in on the fun', price: 800, tag: 'BEST VALUE' },
-    { id: 'd2180', name: '2,180 Diamonds', detail: 'A serious upgrade', price: 1600, tag: '' },
-    { id: 'd5600', name: '5,600 Diamonds', detail: 'The big drop', price: 4000, tag: '' }
+    { id: 'd100', name: '100 Diamants', detail: 'Un petit supplément', price: 800, tag: '' },
+    { id: 'd310', name: '310 Diamants', detail: 'Pour votre prochaine grande partie', price: 2400, tag: 'POPULAIRE' },
+    { id: 'd520', name: '520 Diamants', detail: 'Plus de liberté de jeu', price: 4000, tag: '' },
+    { id: 'd1060', name: '1 060 Diamants', detail: 'Misez sur le plaisir', price: 8000, tag: 'MEILLEURE VALEUR' },
+    { id: 'd2180', name: '2 180 Diamants', detail: 'Une vraie montée en niveau', price: 16000, tag: '' },
+    { id: 'd5600', name: '5 600 Diamants', detail: 'Le grand paquet', price: 40000, tag: '' }
   ],
   membership: [
-    { id: 'weekly', name: 'Weekly Membership', detail: 'A week of in-game perks', price: 159, tag: 'POPULAR' },
-    { id: 'monthly', name: 'Monthly Membership', detail: 'More perks, more play', price: 799, tag: 'BEST VALUE' },
-    { id: 'weekly-lite', name: 'Weekly Lite', detail: 'A lighter weekly option', price: 89, tag: '' },
-    { id: 'monthly-lite', name: 'Monthly Lite', detail: 'A little extra every day', price: 399, tag: '' }
+    { id: 'weekly', name: 'Abonnement hebdomadaire', detail: 'Une semaine d’avantages', price: 1590, tag: 'POPULAIRE' },
+    { id: 'monthly', name: 'Abonnement mensuel', detail: 'Plus d’avantages, plus de jeu', price: 7990, tag: 'MEILLEURE VALEUR' },
+    { id: 'weekly-lite', name: 'Hebdomadaire léger', detail: 'Une option hebdomadaire légère', price: 890, tag: '' },
+    { id: 'monthly-lite', name: 'Mensuel léger', detail: 'Un peu plus chaque jour', price: 3990, tag: '' }
   ]
 };
 
 const grid = document.querySelector('#product-grid');
 const cart = new Map();
 let category = 'diamonds';
-let region = 'IN';
-const currency = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 });
+const currency = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'HTG', maximumFractionDigits: 0 });
 
 function formatPrice(price) {
-  return region === 'IN' ? currency.format(price) : `₹${price}*`;
+  return currency.format(price).replace(/G/g, ' G');
 }
 
 function renderProducts() {
-  grid.innerHTML = PRODUCTS[category].map((product, index) => `
+  grid.innerHTML = PRODUCTS[category].map((product) => `
     <article class="product-card">
       ${product.tag ? `<span class="product-tag">${product.tag}</span>` : ''}
       <span class="product-symbol" aria-hidden="true">${category === 'diamonds' ? '◆' : '✳'}</span>
       <h3>${product.name}</h3>
       <p class="product-detail">${product.detail}</p>
-      <div class="product-bottom"><span class="product-price">${formatPrice(product.price)}</span><button class="add-button" data-add="${product.id}" aria-label="Add ${product.name} to cart">+</button></div>
+      <div class="product-bottom"><span class="product-price">${formatPrice(product.price)}</span><button class="add-button" data-add="${product.id}" aria-label="Ajouter ${product.name} au panier">+</button></div>
     </article>`).join('');
   grid.querySelectorAll('[data-add]').forEach(button => button.addEventListener('click', () => addToCart(button.dataset.add)));
 }
@@ -57,14 +56,14 @@ function renderCart() {
   document.querySelector('#cart-summary').hidden = quantity === 0;
   document.querySelector('#cart-items').innerHTML = items.map(([id, count]) => {
     const product = findProduct(id);
-    return `<article class="cart-line"><div><h3>${product.name}</h3><p>Qty ${count} · ${formatPrice(product.price)} each</p></div><div class="cart-line-right"><strong>${formatPrice(product.price * count)}</strong><button class="remove-button" data-remove="${id}">Remove</button></div></article>`;
+    return `<article class="cart-line"><div><h3>${product.name}</h3><p>Qté ${count} · ${formatPrice(product.price)} chacun</p></div><div class="cart-line-right"><strong>${formatPrice(product.price * count)}</strong><button class="remove-button" data-remove="${id}">Retirer</button></div></article>`;
   }).join('');
   document.querySelector('#cart-subtotal').textContent = formatPrice(total);
   document.querySelectorAll('[data-remove]').forEach(button => button.addEventListener('click', () => {
     cart.delete(button.dataset.remove);
     renderCart();
   }));
-  document.querySelector('#order-preview').innerHTML = `${items.map(([id, count]) => `${findProduct(id).name} × ${count}`).join('<br>')}<br><strong>Sample total: ${formatPrice(total)}</strong>`;
+  document.querySelector('#order-preview').innerHTML = `${items.map(([id, count]) => `${findProduct(id).name} × ${count}`).join('<br>')}<br><strong>Total exemple : ${formatPrice(total)}</strong>`;
 }
 
 function openCart() {
@@ -90,11 +89,7 @@ document.querySelectorAll('.tab').forEach(tab => tab.addEventListener('click', (
   renderProducts();
 }));
 
-document.querySelector('#region-select').addEventListener('change', event => {
-  region = event.target.value;
-  renderProducts();
-  renderCart();
-});
+document.querySelector('#region-select').addEventListener('change', renderProducts);
 document.querySelector('#cart-trigger').addEventListener('click', openCart);
 document.querySelector('#close-cart').addEventListener('click', closeCart);
 document.querySelector('#drawer-backdrop').addEventListener('click', closeCart);
@@ -106,12 +101,12 @@ document.querySelector('#checkout-button').addEventListener('click', () => {
   document.querySelector('#checkout-dialog').showModal();
 });
 document.querySelector('#checkout-form').addEventListener('submit', event => {
-  event.preventDefault();
+  event.preventEvent();
   if (!event.currentTarget.reportValidity()) return;
   const form = new FormData(event.currentTarget);
   const message = document.querySelector('#form-message');
   message.className = 'form-message success';
-  message.textContent = `Demo complete for player ID ${form.get('playerId')}. No order was placed and no payment was collected.`;
+  message.textContent = `Démonstration terminée pour l'identifiant joueur ${form.get('playerId')}. Aucun achat n'a été effectué et aucun paiement n'a été prélevé.`;
 });
 document.querySelector('#checkout-form').addEventListener('click', event => {
   if (event.target.classList.contains('dialog-close')) document.querySelector('#checkout-dialog').close();
